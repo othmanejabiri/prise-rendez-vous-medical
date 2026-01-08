@@ -1,0 +1,36 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # Route vers Praticien Service
+        - id: praticien-service
+          uri: lb://PRATICIEN-SERVICE
+          predicates:
+            - Path=/praticiens/**
+
+        # Route vers Patient Service
+        - id: patient-service
+          uri: lb://PATIENT-SERVICE
+          predicates:
+            - Path=/patients/**
+
+        # Route vers Rendezvous Service
+        - id: rendezvous-service
+          uri: lb://RENDEZVOUS-SERVICE
+          predicates:
+            - Path=/rendezvous/**
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,32 @@
+package com.medical.praticienservice.service;
+
+import com.medical.praticienservice.entity.Specialty;
+import com.medical.praticienservice.repository.SpecialtyRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class SpecialtyService {
+
+    private final SpecialtyRepository specialtyRepository;
+
+    public List<Specialty> getAllSpecialties() {
+        return specialtyRepository.findAll();
+    }
+
+    public Specialty getSpecialtyById(Long id) {
+        return specialtyRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Specialty not found with id: " + id));
+    }
+
+    public Specialty saveSpecialty(Specialty specialty) {
+        return specialtyRepository.save(specialty);
+    }
+
+    public void deleteSpecialty(Long id) {
+        specialtyRepository.deleteById(id);
+    }
+}

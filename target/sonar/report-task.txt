@@ -1,0 +1,6 @@
+projectKey=Prise-de-rendez-vous-medical
+serverUrl=http://localhost:9000
+serverVersion=25.10.0.114319
+dashboardUrl=http://localhost:9000/dashboard?id=Prise-de-rendez-vous-medical
+ceTaskId=8950d2a6-4d55-48f3-829e-f093bcd22ac1
+ceTaskUrl=http://localhost:9000/api/ce/task?id=8950d2a6-4d55-48f3-829e-f093bcd22ac1

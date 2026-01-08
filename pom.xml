@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.medical</groupId>
+    <artifactId>prise-rendezvous-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>Prise de rendez-vous médical - Parent</name>
+    <description>
+        Projet J2EE multi-modules pour la gestion de prise de rendez-vous médicaux
+    </description>
+
+
+    <properties>
+
+        <java.version>17</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
+
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+
+        <sonar.skip>false</sonar.skip>
+    </properties>
+
+
+    <modules>
+        <module>api-gateway</module>
+        <module>config-server</module>
+        <module>eureka-server</module>
+        <module>notification-service</module>
+        <module>patient-service</module>
+        <module>praticien-service</module>
+        <module>rendezvous-service</module>
+    </modules>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.14.1</version>
+                    <configuration>
+                        <release>${maven.compiler.release}</release>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
